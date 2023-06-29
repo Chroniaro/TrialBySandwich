@@ -40,12 +40,15 @@ public class SandwichTests {
         assert bread.toastiness() >= Constants.kDesiredToastiness : "Bread must be toasted!";
         assert bread.toastiness() < 6 : "Bread is burnt!";
 
+        assert bread.hasCondiments() : "Bread must be given condiments!";
+
         Tomato tomato = robotContainer.ingredientsSubsystem.getTomato();
         assert tomato.isCut() : "Tomato must be cut!";
-    }
 
-    @Test
-    void failingTest() {
-        assert false;
+        Onion onion = robotContainer.ingredientsSubsystem.getOnion();
+        assert onion.isCut() : "Onion must be cut!";
+
+        Protein protein = robotContainer.ingredientsSubsystem.getProtein();
+        assert protein.isCut() : "Protein must be cut!";
     }
 }

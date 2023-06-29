@@ -1,9 +1,9 @@
 package org.jmhsrobotics.frc.subsystems;
 
+import org.jmhsrobotics.sandwich.Bread;
+import org.jmhsrobotics.sandwich.Cuttable;
 import org.jmhsrobotics.sandwich.CuttingBoard;
 import org.jmhsrobotics.sandwich.ThrashingDetector;
-import org.jmhsrobotics.sandwich.Tomato;
-
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class CuttingBoardSubsystem extends SubsystemBase {
@@ -14,7 +14,11 @@ public class CuttingBoardSubsystem extends SubsystemBase {
         thrashingDetector.reset();
     }
 
-    public void cut(Tomato tomato) {
-        cuttingBoard.cut(tomato);
+    public void cut(Cuttable cuttable) {
+        cuttingBoard.cut(cuttable);
+    }
+
+    public void applyCondiments(Bread bread) {
+        cuttingBoard.applyCondiments(bread);
     }
 }

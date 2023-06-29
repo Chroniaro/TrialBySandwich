@@ -7,8 +7,12 @@ public class CuttingBoard {
         this.detector = detector;
     }
 
-    public void cut(Tomato tomato) {
+    public void cut(Cuttable cuttable) {
         detector.detect();
-        tomato.cut();
+        cuttable.cut();
+    }
+
+    public void applyCondiments(Bread bread) {
+        bread.applyCondiments();
     }
 }
