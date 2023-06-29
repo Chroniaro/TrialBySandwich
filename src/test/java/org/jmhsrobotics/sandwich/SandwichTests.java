@@ -25,11 +25,11 @@ public class SandwichTests {
     }
 
     @Test
-    void testMakeSandwich() {
+    void testToastBread() {
         RobotContainer robotContainer = new RobotContainer();
-        Command makeSandwichCommand = robotContainer.getMakeSandwichCommand();
+        Command toastBreadCommand = robotContainer.getToastBreadCommand();
 
-        makeSandwichCommand.schedule();
+        toastBreadCommand.schedule();
 
         for (int i = 0; i < 1000; ++i) {
             commandScheduler.run();
@@ -40,15 +40,6 @@ public class SandwichTests {
         assert bread.toastiness() >= Constants.kDesiredToastiness : "Bread must be toasted!";
         assert bread.toastiness() < 6 : "Bread is burnt!";
 
-        assert bread.hasCondiments() : "Bread must be given condiments!";
-
-        Tomato tomato = robotContainer.ingredientsSubsystem.getTomato();
-        assert tomato.isCut() : "Tomato must be cut!";
-
-        Onion onion = robotContainer.ingredientsSubsystem.getOnion();
-        assert onion.isCut() : "Onion must be cut!";
-
-        Protein protein = robotContainer.ingredientsSubsystem.getProtein();
-        assert protein.isCut() : "Protein must be cut!";
+        assert !robotContainer.toasterSubsystem.hasBread() : "Bread is still in toaster!";
     }
 }

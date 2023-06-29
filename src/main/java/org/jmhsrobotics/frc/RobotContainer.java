@@ -4,14 +4,12 @@
 
 package org.jmhsrobotics.frc;
 
-import org.jmhsrobotics.frc.commands.MakeSandwichCommand;
+import org.jmhsrobotics.frc.commands.ToastBreadCommand;
 import org.jmhsrobotics.frc.subsystems.CuttingBoardSubsystem;
 import org.jmhsrobotics.frc.subsystems.IngredientsSubsystem;
 import org.jmhsrobotics.frc.subsystems.ToasterSubsystem;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -25,27 +23,8 @@ public class RobotContainer {
   public final CuttingBoardSubsystem cuttingBoardSubsystem = new CuttingBoardSubsystem();
   public final ToasterSubsystem toasterSubsystem = new ToasterSubsystem();
 
-  /** The container for the robot. Contains subsystems, OI devices, and commands. */
-  public RobotContainer() {
-    // Configure the trigger bindings
-    configureBindings();
-  }
-
-  /**
-   * Use this method to define your trigger->command mappings. Triggers can be created via the
-   * {@link Trigger#Trigger(java.util.function.BooleanSupplier)} constructor with an arbitrary
-   * predicate, or via the named factories in {@link
-   * edu.wpi.first.wpilibj2.command.button.CommandGenericHID}'s subclasses for {@link
-   * CommandXboxController Xbox}/{@link edu.wpi.first.wpilibj2.command.button.CommandPS4Controller
-   * PS4} controllers or {@link edu.wpi.first.wpilibj2.command.button.CommandJoystick Flight
-   * joysticks}.
-   */
-  private void configureBindings() {
-    
-  }
-
-  public Command getMakeSandwichCommand() {
-    return new MakeSandwichCommand(toasterSubsystem, cuttingBoardSubsystem, ingredientsSubsystem);
+  public Command getToastBreadCommand() {
+    return new ToastBreadCommand(toasterSubsystem, ingredientsSubsystem);
   }
 
   public void resetThrashingDetectors() {

@@ -12,7 +12,19 @@ public class ToasterSubsystem {
         thrashingDetector.reset();
     }
 
-    public void toast(Bread bread) {
-        toaster.toast(bread);
+    public void addBread(Bread bread) {
+        toaster.addBread(bread);
+    }
+
+    public void toast() {
+        toaster.toast();
+    }
+
+    public void removeBread() {
+        toaster.removeBread();
+    }
+
+    public boolean hasBread() {
+        return toaster.hasBread();
     }
 }
