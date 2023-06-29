@@ -29,6 +29,8 @@ public class SandwichTests {
         RobotContainer robotContainer = new RobotContainer();
         Command toastBreadCommand = robotContainer.getToastBreadCommand();
 
+        assert toastBreadCommand != null : "RobotContainer.getToastBreadCommand() not implemented!";
+
         toastBreadCommand.schedule();
 
         for (int i = 0; i < 1000; ++i) {

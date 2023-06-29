@@ -4,7 +4,6 @@
 
 package org.jmhsrobotics.frc;
 
-import org.jmhsrobotics.frc.commands.ToastBreadCommand;
 import org.jmhsrobotics.frc.subsystems.CuttingBoardSubsystem;
 import org.jmhsrobotics.frc.subsystems.IngredientsSubsystem;
 import org.jmhsrobotics.frc.subsystems.ToasterSubsystem;
@@ -24,7 +23,7 @@ public class RobotContainer {
   public final ToasterSubsystem toasterSubsystem = new ToasterSubsystem();
 
   public Command getToastBreadCommand() {
-    return new ToastBreadCommand(toasterSubsystem, ingredientsSubsystem);
+    return null;
   }
 
   public void resetThrashingDetectors() {
